@@ -24,7 +24,7 @@ class window.Hand extends Backbone.Collection
   stand: ->
     @trigger("stand")
 
-    ###while @scores()[0] < 17
-      #triggers revealed event
+  dealerDraw: ->
+    while @scores()[0] < 17
       @hit()
       console.log(@scores())###
