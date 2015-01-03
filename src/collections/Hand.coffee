@@ -15,6 +15,10 @@ class window.Hand extends Backbone.Collection
     score + if card.get 'revealed' then card.get 'value' else 0
   , 0
 
+  maxScore: ->
+    scores = @scores()
+    if scores[1] <= 21 then scores[1] else scores[0]
+
   scores: ->
     # The scores are an array of potential scores.
     # Usually, that array contains one element. That is the only score.
@@ -25,6 +29,11 @@ class window.Hand extends Backbone.Collection
     @trigger("stand")
 
   dealerDraw: ->
-    while @scores()[0] < 17
+    while @scores()[1] < 17
       @hit()
-      console.log(@scores())###
+
+    if @scores()[1] > 21
+      while @scores()[0] < 17
+        @hit()
+
+    console.log(@scores())###
