@@ -22,4 +22,9 @@ class window.Hand extends Backbone.Collection
     [@minScore(), @minScore() + 10 * @hasAce()]
 
   stand: ->
-    @add(@deck.pop()) while @minScore() < 17
+    @trigger("stand")
+
+    ###while @scores()[0] < 17
+      #triggers revealed event
+      @hit()
+      console.log(@scores())###
