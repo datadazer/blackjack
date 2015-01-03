@@ -1,16 +1,22 @@
 .card {
   float: left;
-  border: solid 1px black;
+  border: solid 1px white;
   width: 100px;
   border-radius: 5px;
   height: 140px;
   margin-right: 20px;
+  color: white;
 }
 
 .covered {
-  background-color: black;
+  background-color: white;
 }
 
 .hand {
   overflow: auto;
+  color: yellow;
+}
+
+body {
+	background-color: green;
 }
